@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ULTRAX | Vehicle Tracking &amp; Security Systems</title>
+<meta name="description" content="ULTRAX supplies GPS trackers, 4G dash cams, turbo timers and home &amp; business security systems in Zimbabwe. Open 24 hours.">
+<meta name="theme-color" content="#1a0508">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#e0112b;
+  --red-deep:#8d0a1b;
+  --red-dark:#3a0710;
+  --ink:#12040a;
+  --ink-2:#1c070d;
+  --card:rgba(255,255,255,.04);
+  --line:rgba(255,255,255,.12);
+  --text:#fff;
+  --muted:rgba(255,255,255,.72);
+  --radius:14px;
+  --gut:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--ink);color:var(--text);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+section{position:relative;padding:clamp(56px,9vw,110px) 0}
+.eyebrow{font-size:clamp(9px,2.4vw,10.5px);letter-spacing:.24em;text-transform:uppercase;color:#ff8d9b;font-weight:500;margin-bottom:12px}
+h2{font-size:clamp(19px,3.2vw,28px);line-height:1.2;font-weight:500;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+.lead{color:var(--muted);font-size:clamp(12.5px,3vw,14.5px);max-width:600px;font-weight:400}
+.head{margin-bottom:clamp(28px,5vw,52px)}
+.head.center{text-align:center}.head.center .lead{margin:0 auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border-radius:5px;font-weight:500;font-size:12.5px;letter-spacing:.01em;border:1px solid transparent;cursor:pointer;transition:.25s;white-space:nowrap;font-family:inherit}
+.btn-white{background:#fff;color:#1a0508}
+.btn-white:hover{background:#ffe3e6;transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff;border-color:rgba(255,255,255,.25)}
+.btn-red:hover{background:#ff1f3b;transform:translateY(-2px)}
+.btn-ghost{background:rgba(120,5,20,.55);color:#fff;border-color:rgba(255,255,255,.3);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(224,17,43,.7)}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s;padding:env(safe-area-inset-top) 0 0}
+header.solid{background:rgba(26,5,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:600;letter-spacing:.1em;font-size:14px}
+.logo svg{width:24px;height:24px}
+.logo small{display:block;font-size:6.5px;font-weight:500;letter-spacing:.2em;color:var(--muted);margin-top:-2px}
+.links{display:flex;gap:28px;font-size:12px;font-weight:400;color:var(--muted)}
+.links a:hover{color:#fff}
+.nav .btn{padding:8px 16px;font-size:12px}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;position:relative}
+.burger span,.burger span::before,.burger span::after{content:"";position:absolute;left:9px;width:22px;height:2px;background:#fff;transition:.3s}
+.burger span{top:19px}.burger span::before{top:-7px;left:0}.burger span::after{top:7px;left:0}
+.burger.open span{background:transparent}
+.burger.open span::before{transform:translateY(7px) rotate(45deg)}
+.burger.open span::after{transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none}
+@media(max-width:860px){
+  .links,.nav .btn.desk{display:none}
+  .burger{display:block}
+  .mobile-menu{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(20,4,8,.97);backdrop-filter:blur(14px);padding:12px var(--gut) 24px;gap:2px;transform:translateY(-130%);transition:.35s;border-bottom:1px solid var(--line);z-index:49}
+  .mobile-menu.open{transform:none}
+  .mobile-menu a{padding:12px 0;border-bottom:1px solid var(--line);font-weight:400;font-size:13px}
+  .mobile-menu .btn{margin-top:16px;border:0}
+}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 0 120px;overflow:hidden;
+  background:
+   radial-gradient(ellipse at 50% 38%,rgba(224,17,43,.55),rgba(120,5,20,.75) 45%,rgba(30,4,9,.95) 100%),
+   linear-gradient(180deg,rgba(150,10,28,.55),rgba(40,4,10,.85)),
+   url('bg.avif') center/cover no-repeat;
+  background-color:#7a0b1a}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 4px);pointer-events:none}
+.waves{position:absolute;left:-8%;width:116%;bottom:12%;height:34%;opacity:.85;pointer-events:none;overflow:visible;animation:flow 10s ease-in-out infinite alternate;will-change:transform}
+.waves path{fill:none;stroke-linecap:round}
+.waves .w0{stroke:#ff2a45;stroke-width:44;opacity:.18}
+.waves .w1{stroke:#ff2a45;stroke-width:18;opacity:.55}
+.waves .w2{stroke:#ff6b7d;stroke-width:6;opacity:.75}
+.waves .w3{stroke:#fff;stroke-width:2;opacity:.45}
+@keyframes flow{from{transform:translateX(-2.5%)}to{transform:translateX(2.5%)}}
+.hero-in{position:relative;z-index:2;max-width:880px}
+.hero .eyebrow{color:#ffb4bd;margin-bottom:16px;font-size:clamp(8.5px,2.3vw,10px)}
+.hero h1{font-size:clamp(21px,4.6vw,40px);line-height:1.18;font-weight:500;letter-spacing:.035em;text-transform:uppercase;text-shadow:0 6px 40px rgba(0,0,0,.45)}
+.hero p{margin:18px auto 26px;max-width:520px;color:rgba(255,255,255,.8);font-size:clamp(12px,3vw,14px);font-weight:400}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero-foot{position:absolute;z-index:2;left:0;right:0;bottom:0;border-top:1px solid rgba(255,255,255,.14);background:rgba(20,3,8,.45);backdrop-filter:blur(6px)}
+.hero-foot .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;padding-bottom:calc(14px + env(safe-area-inset-bottom));font-size:clamp(8px,2.2vw,10px);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.hero-foot span:nth-child(2){display:none}
+@media(min-width:640px){.hero-foot span:nth-child(2){display:block}}
+
+/* STATS */
+.stats{padding:0;margin-top:-1px;background:linear-gradient(90deg,var(--red-deep),var(--red),var(--red-deep))}
+.stats .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.stat{padding:22px 10px;text-align:center;border-right:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
+.stat b{display:block;font-size:clamp(15px,3.8vw,20px);font-weight:600}
+.stat span{font-size:clamp(8.5px,2.3vw,10.5px);text-transform:uppercase;letter-spacing:.16em;opacity:.9}
+@media(min-width:700px){.stats .wrap{grid-template-columns:repeat(4,1fr)}.stat{border-bottom:0}.stat:last-child{border-right:0}}
+
+/* PRODUCTS */
+.grid{display:grid;gap:clamp(14px,3vw,26px);grid-template-columns:1fr}
+@media(min-width:560px){.grid.p{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.grid.p{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,70,95,.6);box-shadow:0 20px 50px -20px rgba(224,17,43,.55)}
+.card .img{aspect-ratio:1/1;background:#220811;overflow:hidden}
+.card .img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover .img img{transform:scale(1.05)}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:clamp(14px,3.6vw,16px);font-weight:600}
+.card p{font-size:12.5px;color:var(--muted);flex:1}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+.price{font-size:clamp(16px,4vw,19px);font-weight:600}
+.price small{font-size:10.5px;font-weight:500;color:var(--muted)}
+.tag{position:absolute;top:12px;left:12px;background:var(--red);padding:4px 10px;border-radius:99px;font-size:10px;font-weight:500;letter-spacing:.08em}
+.card .img{position:relative}
+.card .btn{padding:8px 14px;font-size:12px}
+
+/* SPLIT sections */
+.split{display:grid;gap:clamp(28px,6vw,70px);align-items:center}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr}.split.rev .media{order:2}}
+.media{position:relative}
+.media img{border-radius:var(--radius);border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(224,17,43,.6);width:100%;object-fit:cover}
+.media::after{content:"";position:absolute;inset:auto -14px -14px auto;width:60%;height:60%;border-radius:var(--radius);background:linear-gradient(135deg,transparent,rgba(224,17,43,.35));z-index:-1}
+.ticks{list-style:none;display:grid;gap:12px;margin:22px 0 28px}
+.ticks li{display:flex;gap:10px;align-items:flex-start;font-size:clamp(12.5px,3.1vw,14px);color:rgba(255,255,255,.88)}
+.ticks li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100%}
+.alt{background:linear-gradient(180deg,var(--ink-2),var(--red-dark) 140%)}
+.bigprice{display:inline-block;background:var(--red);padding:6px 16px;border-radius:8px;font-weight:600;font-size:clamp(15px,3.8vw,18px);margin-bottom:16px}
+
+/* DASH CAM duo */
+.duo{display:grid;gap:clamp(16px,3vw,28px)}
+@media(min-width:760px){.duo{grid-template-columns:repeat(3,1fr)}}
+.duo .card .img{aspect-ratio:1/1}
+
+/* ICON grid */
+.icons{grid-template-columns:repeat(2,1fr)}
+@media(min-width:900px){.icons{grid-template-columns:repeat(4,1fr)}}
+.ic{padding:clamp(16px,3vw,26px);border:1px solid var(--line);border-radius:var(--radius);background:var(--card);transition:.3s}
+.ic:hover{border-color:rgba(255,70,95,.6);background:rgba(224,17,43,.1)}
+.ic svg{width:26px;height:26px;stroke:#ff4d63;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px}
+.ic h3{font-size:clamp(13px,3.3vw,15px);font-weight:600;margin-bottom:5px}
+.ic p{font-size:clamp(11.5px,3vw,13px);color:var(--muted)}
+
+/* STEPS */
+.steps{counter-reset:s;display:grid;gap:18px}
+@media(min-width:800px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{counter-increment:s;padding:26px 22px;border-left:2px solid var(--red);background:var(--card);border-radius:0 var(--radius) var(--radius) 0}
+.step::before{content:"0" counter(s);display:block;font-size:22px;font-weight:500;color:var(--red);margin-bottom:4px}
+.step h3{font-size:14.5px;font-weight:600;margin-bottom:4px}
+.step p{font-size:12.5px;color:var(--muted)}
+
+/* TABLE */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:620px;font-size:12.5px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:rgba(224,17,43,.22);font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td.y{color:#5dff9a;font-weight:500}td.n{color:rgba(255,255,255,.35)}
+td:first-child{font-weight:500}
+.hint{font-size:11px;color:var(--muted);margin-top:10px}
+@media(min-width:760px){.hint{display:none}}
+
+/* FAQ */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+details{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:0 20px}
+summary{cursor:pointer;padding:16px 0;font-weight:500;font-size:clamp(13px,3.3vw,14.5px);list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:22px;color:#ff4d63;transition:.3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 16px;color:var(--muted);font-size:12.5px}
+
+/* CONTACT */
+.contact{background:
+  radial-gradient(ellipse at 50% 0%,rgba(224,17,43,.5),transparent 65%),
+  linear-gradient(180deg,var(--red-dark),var(--ink));
+  text-align:center}
+.cbox{display:grid;gap:14px;margin:34px auto 0;max-width:860px;grid-template-columns:1fr}
+@media(min-width:700px){.cbox{grid-template-columns:repeat(3,1fr)}}
+.cbox a{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.05);transition:.3s;word-break:break-word}
+.cbox a:hover{border-color:var(--red);background:rgba(224,17,43,.18)}
+.cbox small{display:block;color:#ff8d9b;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px}
+.cbox b{font-size:clamp(13px,3.4vw,15px);font-weight:500}
+.contact .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+
+footer{padding:28px 0 calc(28px + env(safe-area-inset-bottom));border-top:1px solid var(--line);font-size:11.5px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* WhatsApp float */
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:54px;height:54px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.wa svg{width:28px;height:28px;fill:#fff}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.waves{animation:none!important}html{scroll-behavior:auto}}
+@media(max-width:380px){.btn{padding:12px 18px}.hero .cta .btn{width:100%}}
+</style>
+</head>
+<body>
+
+<!-- 1. NAV + HERO -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="ULTRAX home">
+      <svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2"><path d="M16 2l12 7v14l-12 7L4 23V9z"/><path d="M10 21l6-11 6 11"/></svg>
+      <span>ULTRAX<small>OMNIGUARD · SENTINEL · VIGILANCE</small></span>
+    </a>
+    <nav class="links">
+      <a href="#products">Products</a><a href="#tracking">Tracking</a><a href="#dashcams">Dash Cams</a><a href="#turbo">Turbo Timer</a><a href="#security">Security</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-white desk" href="#contact">Get a Quote</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mm">
+  <a href="#products">Products</a><a href="#tracking">Tracking</a><a href="#dashcams">Dash Cams</a><a href="#turbo">Turbo Timer</a><a href="#security">Security</a><a href="#faq">FAQ</a>
+  <a class="btn btn-red" href="#contact">Get a Quote</a>
+</div>
+
+<section class="hero" id="top">
+  <svg class="waves" viewBox="0 0 1200 300" preserveAspectRatio="none" overflow="visible" aria-hidden="true">
+    <path class="w0" d="M-50 200 C150 40 300 300 520 170 S900 20 1250 150"/>
+    <path class="w1" d="M-50 200 C150 40 300 300 520 170 S900 20 1250 150"/>
+    <path class="w2" d="M-50 220 C200 90 350 280 560 190 S950 60 1250 170"/>
+    <path class="w3" d="M-50 180 C100 120 400 260 600 160 S1000 80 1250 130"/>
+  </svg>
+  <div class="wrap hero-in">
+    <div class="eyebrow">Vehicle Tracking &amp; Security Systems</div>
+    <h1>Drive Smart.<br>Stay Protected.</h1>
+    <p>GPS trackers, 4G dash cams and security systems built to keep your vehicles, fleet, home and business under watch &ndash; day and night.</p>
+    <div class="cta">
+      <a class="btn btn-white" href="#products">Shop Products</a>
+      <a class="btn btn-ghost" href="#contact">Request a Quote</a>
+    </div>
+  </div>
+  <div class="hero-foot"><div class="wrap">
+    <span>Open 24 hours</span><span>Live GPS · 4G · Cloud</span><span>Scroll ↓</span>
+  </div></div>
+</section>
+
+<!-- 2. STATS -->
+<div class="stats"><div class="wrap">
+  <div class="stat"><b>24/7</b><span>Open 24 hours</span></div>
+  <div class="stat"><b>4G</b><span>Live connectivity</span></div>
+  <div class="stat"><b>From $60</b><span>Affordable pricing</span></div>
+  <div class="stat"><b>$10</b><span>Engine cut-off add-on</span></div>
+</div></div>
+
+<!-- 3. PRODUCTS -->
+<section id="products">
+  <div class="wrap">
+    <div class="head center rv"><div class="eyebrow">Our Catalogue</div><h2>Protection you can install today</h2><p class="lead">Five core products to track, record and safeguard your vehicle. Prices in US dollars.</p></div>
+    <div class="grid p">
+      <article class="card rv"><div class="img"><span class="tag">Best seller</span><img loading="lazy" src="4gdashcam.jpg" alt="ULTRAX 4G Dash Cam"></div><div class="body"><h3>4G Dash Cam</h3><p>Live GPS tracking, cloud upload, live monitoring and remote access from your phone.</p><div class="row"><div class="price">US$150</div><a class="btn btn-red" href="#contact">Enquire</a></div></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="4GDUALDASHCAM.webp" alt="ULTRAX 4G Dual Dash Cam"></div><div class="body"><h3>4G Dual Dash Cam</h3><p>Dual-lens recording with ADAS collision alerts and driver monitoring (DMS).</p><div class="row"><div class="price">US$300</div><a class="btn btn-red" href="#contact">Enquire</a></div></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="GPSTRACKER.webp" alt="ULTRAX GPS Tracker"></div><div class="body"><h3>GPS Tracker</h3><p>Overspeed alerts, trip history, geofencing and VID tracking reports.</p><div class="row"><div class="price">US$65 <small>+ $10 engine cut-off</small></div><a class="btn btn-red" href="#contact">Enquire</a></div></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="DASHCAM.jpg" alt="ULTRAX 3 Channel Dash Cam"></div><div class="body"><h3>3 Channel Dash Cam</h3><p>1080P Full HD recording of the road, the cabin and the rear, with parking monitoring.</p><div class="row"><div class="price">US$90</div><a class="btn btn-red" href="#contact">Enquire</a></div></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="turbotimer.jpg" alt="ULTRAX Turbo Timer"></div><div class="body"><h3>Turbo Timer</h3><p>Protect your turbocharger with an automatic safe cool-down after driving.</p><div class="row"><div class="price">US$60</div><a class="btn btn-red" href="#contact">Enquire</a></div></div></article>
+      <article class="card rv" style="justify-content:center;text-align:center;background:linear-gradient(135deg,var(--red-deep),var(--red))"><div class="body" style="align-items:center;justify-content:center;padding:34px 22px"><h3>Looking for something else?</h3><p style="flex:0">We also supply home &amp; business security systems. Message us for a quote.</p><a class="btn btn-white" style="margin-top:12px" href="https://wa.me/263771804820">Message ULTRAX</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. TRACKING SPOTLIGHT -->
+<section class="alt" id="tracking">
+  <div class="wrap split">
+    <div class="media rv"><img loading="lazy" src="trackkk.jpg" alt="ULTRAX GPS vehicle tracking" onerror="this.src='GPSTRACKER.webp'"></div>
+    <div class="rv">
+      <div class="eyebrow">GPS Tracking</div>
+      <h2>Overspeeding is killing your fleet</h2>
+      <p class="lead">Speeding causes accidents, wears tyres and components, and burns more fuel. A tracker gives you instant control.</p>
+      <ul class="ticks">
+        <li>Instant overspeed alerts</li>
+        <li>Full trip history and VID tracking reports</li>
+        <li>Geofencing for zones you define</li>
+        <li>Remote engine cut-off for just $10 extra</li>
+      </ul>
+      <span class="bigprice">GPS Tracker $65 only</span><br>
+      <a class="btn btn-red" href="#contact">Get a Tracker</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. DASH CAMS -->
+<section id="dashcams">
+  <div class="wrap">
+    <div class="head rv"><div class="eyebrow">Dash Cams</div><h2>Crystal clear recording, day or night</h2><p class="lead">From a 3-channel starter to a dual-lens 4G system with driver monitoring.</p></div>
+    <div class="duo">
+      <article class="card rv"><div class="img"><img loading="lazy" src="DASHCAM.jpg" alt="3 Channel Dash Cam"></div><div class="body"><h3>3 Channel &middot; $90</h3><p>Front, inside and rear view. Loop recording, G-sensor, emergency lock, up to 128GB.</p></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="4gdashcam.jpg" alt="4G Dash Cam"></div><div class="body"><h3>4G Dash Cam &middot; $150</h3><p>Live GPS, 4G network, cloud upload, live monitoring and remote access.</p></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="4GDUALDASHCAM.webp" alt="4G Dual Dash Cam"></div><div class="body"><h3>4G Dual &middot; $300</h3><p>Everything in 4G plus ADAS and DMS for fatigue, distraction and unsafe behaviour.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 6. TURBO TIMER -->
+<section class="alt" id="turbo">
+  <div class="wrap split rev">
+    <div class="media rv"><img loading="lazy" src="turbotimer.jpg" alt="ULTRAX Turbo Timer"></div>
+    <div class="rv">
+      <div class="eyebrow">Turbo Timer</div>
+      <h2>Boost finely. Cool properly.</h2>
+      <p class="lead">Safeguard and enhance your turbocharger with a safe engine cool-down after every drive.</p>
+      <ul class="ticks">
+        <li>Automatic timer: 0&ndash;999 seconds</li>
+        <li>Manual adjustment in 10 second increments</li>
+        <li>Digital display with blue LED readout</li>
+        <li>Engine RPM sensor and handbrake safety detection</li>
+        <li>Prevents premature wear, extends lifespan, reduces carbon build-up</li>
+      </ul>
+      <span class="bigprice">US$60</span><br>
+      <a class="btn btn-red" href="#contact">Request a Quote or Book an Installation</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. SECURITY -->
+<section id="security">
+  <div class="wrap">
+    <div class="head center rv"><div class="eyebrow">Home &amp; Business</div><h2>Security systems beyond the vehicle</h2><p class="lead">We also protect homes and businesses. Ask us for a custom quote.</p></div>
+    <div class="grid icons">
+      <div class="ic rv"><svg viewBox="0 0 24 24"><path d="M3 9l2-4h14l2 4"/><rect x="4" y="9" width="16" height="10" rx="2"/><circle cx="12" cy="14" r="2.5"/></svg><h3>CCTV Cameras</h3><p>Indoor and outdoor surveillance.</p></div>
+      <div class="ic rv"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><h3>Alarm Systems</h3><p>Instant alerts on intrusion.</p></div>
+      <div class="ic rv"><svg viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h3>Live Tracking</h3><p>Know where your assets are.</p></div>
+      <div class="ic rv"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>Remote Access</h3><p>Monitor from your phone.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. HOW IT WORKS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="head rv"><div class="eyebrow">How it works</div><h2>Protected in four simple steps</h2></div>
+    <div class="steps">
+      <div class="step rv"><h3>Contact us</h3><p>Call or WhatsApp 077 180 4820 any time.</p></div>
+      <div class="step rv"><h3>Get a quote</h3><p>Tell us your vehicle or site and needs.</p></div>
+      <div class="step rv"><h3>Installation</h3><p>Book a professional fitting.</p></div>
+      <div class="step rv"><h3>Stay in control</h3><p>Monitor from your phone or laptop.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. WHY ULTRAX -->
+<section>
+  <div class="wrap">
+    <div class="head center rv"><div class="eyebrow">Why ULTRAX</div><h2>Omniguard. Sentinel. Vigilance.</h2></div>
+    <div class="grid icons">
+      <div class="ic rv"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Open 24 hours</h3><p>Reach us whenever you need.</p></div>
+      <div class="ic rv"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg><h3>Honest pricing</h3><p>Clear USD prices, no surprises.</p></div>
+      <div class="ic rv"><svg viewBox="0 0 24 24"><path d="M2 8c6-6 14-6 20 0M5 12c4-4 10-4 14 0M9 16c2-2 4-2 6 0"/><circle cx="12" cy="19" r="1"/></svg><h3>4G connected</h3><p>Live data, cloud storage.</p></div>
+      <div class="ic rv"><svg viewBox="0 0 24 24"><path d="M14 7a4 4 0 11-5 5L3 18v3h3l1-1v-2h2l1-1v-2l2-1"/></svg><h3>Local support</h3><p>Installation and after-sales help.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. COMPARE -->
+<section class="alt">
+  <div class="wrap">
+    <div class="head rv"><div class="eyebrow">Compare</div><h2>Find the right product</h2></div>
+    <div class="tw rv"><table>
+      <tr><th>Product</th><th>Price</th><th>Live GPS</th><th>4G / Cloud</th><th>Video</th><th>Best for</th></tr>
+      <tr><td>GPS Tracker</td><td>$65</td><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td><td>Fleets &amp; anti-theft</td></tr>
+      <tr><td>3 Channel Dash Cam</td><td>$90</td><td class="n">No</td><td class="n">No</td><td class="y">3 channels</td><td>Everyday drivers</td></tr>
+      <tr><td>4G Dash Cam</td><td>$150</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Yes</td><td>Remote monitoring</td></tr>
+      <tr><td>4G Dual Dash Cam</td><td>$300</td><td class="y">Yes</td><td class="y">Yes</td><td class="y">Dual + ADAS/DMS</td><td>Commercial fleets</td></tr>
+      <tr><td>Turbo Timer</td><td>$60</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td class="n">&ndash;</td><td>Turbo engines</td></tr>
+    </table></div>
+    <p class="hint">Swipe sideways to see the full table &rarr;</p>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head center rv"><div class="eyebrow">FAQ</div><h2>Common questions</h2></div>
+    <div class="faq">
+      <details class="rv"><summary>Can I stop my vehicle remotely?</summary><p>Yes. Add remote engine cut-off to the GPS Tracker for $10.</p></details>
+      <details class="rv"><summary>Do you install the products?</summary><p>Yes. Request a quote or book an installation by calling 077 180 4820.</p></details>
+      <details class="rv"><summary>Which dash cam should I choose?</summary><p>The 3 Channel ($90) records the road and cabin. Pick a 4G model for live monitoring and cloud upload; the Dual ($300) adds ADAS and driver monitoring.</p></details>
+      <details class="rv"><summary>What is a turbo timer for?</summary><p>It keeps the engine running for a safe cool-down after driving, protecting your turbocharger from oil coking and wear.</p></details>
+      <details class="rv"><summary>Do you offer home and business security?</summary><p>Yes. Message us with your requirements and we will quote.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 12. CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Ready to protect what matters?</h2>
+    <p class="lead" style="margin:0 auto">We are open 24 hours. Call, WhatsApp or email for a quote.</p>
+    <div class="cbox">
+      <a href="tel:+263771804820"><small>Call</small><b>077 180 4820</b></a>
+      <a href="mailto:wisdomlebson@gmail.com"><small>Email</small><b>wisdomlebson@gmail.com</b></a>
+      <a href="https://www.instagram.com/ultrax_zw" target="_blank" rel="noopener"><small>Instagram</small><b>@ultrax_zw</b></a>
+    </div>
+    <div class="cta">
+      <a class="btn btn-white" href="https://wa.me/263771804820" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn btn-ghost" href="tel:+263771804820">Call now</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>&copy; <span id="yr"></span> ULTRAX. All rights reserved.</span><span>www.ultrax.co.zw</span></div></footer>
+
+<a class="wa" href="https://wa.me/263771804820" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.2.1.400 0 .5l-.4.600c-.2.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.700-.1l1.900.9c.3.100.5.200.5.400.1.100.1.700-.100 1.300z"/></svg></a>
+
+<script>
+const h=document.getElementById('hdr'),b=document.getElementById('burger'),m=document.getElementById('mm');
+addEventListener('scroll',()=>h.classList.toggle('solid',scrollY>40),{passive:true});
+b.onclick=()=>{b.classList.toggle('open');m.classList.toggle('open')};
+m.querySelectorAll('a').forEach(a=>a.onclick=()=>{b.classList.remove('open');m.classList.remove('open')});
+document.getElementById('yr').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
